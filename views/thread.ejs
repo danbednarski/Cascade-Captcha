@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Renderer</title>
+  <style>
+    body {
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: darkblue;
+    }
+
+    @import "compass/css3";
+
+body{
+  background-color:white;
+  height: 100%;
+  font-family: 'Varela', sans-serif;
+}
+
+.glitch{
+  color:white;
+  font-size:100px;
+  position:relative;
+  width:400px;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:black;
+  background:white;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue; 
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+  </style>
+</head>
+<body>
+    <script>
+if (location.href.endsWith('untrusted-user-made-thread-29-play!')) {
+    document.getElementsByTagName('html')[0].innerHTML = `
+    <style>
+        body { background-color: black;}
+.glitch-wrapper {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background-color: black;
+}
+
+.glitch {
+   position: relative;
+   font-size: 50px;
+   font-weight: bold;
+   color: #FFFFFF;
+   letter-spacing: 3px;
+   z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+   display: block;
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+}
+
+.glitch:before {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+   color: #00FFFF;
+   z-index: -1;
+}
+
+.glitch:after {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+   color: #FF00FF;
+   z-index: -2;
+}
+
+@keyframes glitch-it {
+   0% {
+      transform: translate(0);
+   }
+   20% {
+      transform: translate(-2px, 2px);
+   }
+   40% {
+      transform: translate(-2px, -2px);
+   }
+   60% {
+      transform: translate(2px, 2px);
+   }
+   80% {
+      transform: translate(2px, -2px);
+   }
+   to {
+      transform: translate(0);
+   }
+}</style>
+    <div style="margin: auto; margin-top: 40px; width: 1000px" class="glitch-wrapper">
+   <div class="glitch" data-text="Do ye suppose that ye could be happy to dwell with that holy Being, when your souls are racked with a consciousness of guilt that ye have abused his laws?
+Behold, ye would be more miserable to dwell with a holy and just God, knowing your filthiness before him, than to dwell with the damned souls in hell.
+For when ye see your nakedness before God, and also the glory of God, and the holiness of Jesus Christ, it will kindle a flame of unquenchable fire upon you.">
+    
+    
+Do ye suppose that ye could be happy to dwell with that holy Being, when your souls are racked with a consciousness of guilt that ye have abused his laws?
+Behold, ye would be more miserable to dwell with a holy and just God, knowing your <a href="https://x.com/hanfel_dovned/status/1715055895347114093">filthiness</a> before him, than to dwell with the damned souls in hell.
+For when ye see your nakedness before God, and also the glory of God, and the holiness of Jesus Christ, it will kindle a flame of unquenchable fire upon you.
+
+    </div>`;
+}
+    </script>
+    <div>
+        <p>Hey, Thread <%= threadId %> can't come out right now. Thread <%= threadId %> can't play with you anymore.</p>
+    <p><a href="?untrusted-user-made-thread-<%= threadId %>-play!">[force Thread <%= threadId %> to play]</a></p>
+    </div>
+    
+  <pre>      
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⠂⢉⠤⠐⠋⠈⠡⡈⠉⠐⠠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡀⢠⣤⠔⠁⢀⠀⠀⠀⠀⠀⠀⠀⠈⢢⠀⠀⠈⠱⡤⣤⠄⣀⠀⠀⠀⠀⠀
+⠀⠀⠰⠁⠀⣰⣿⠃⠀⢠⠃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠈⢞⣦⡀⠈⡇⠀⠀⠀
+⠀⠀⠀⢇⣠⡿⠁⠀⢀⡃⠀⣈⠀⠀⠀⠀⢰⡀⠀⠀⠀⠀⢢⠰⠀⠀⢺⣧⢰⠀⠀⠀⠀
+⠀⠀⠀⠈⣿⠁⡘⠀⡌⡇⠀⡿⠸⠀⠀⠀⠈⡕⡄⠀⠐⡀⠈⠀⢃⠀⠀⠾⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠇⡇⠃⢠⠀⠶⡀⡇⢃⠡⡀⠀⠀⠡⠈⢂⡀⢁⠀⡁⠸⠀⡆⠘⡀⠀⠀⠀⠀
+⠀⠀⠀⠸⠀⢸⠀⠘⡜⠀⣑⢴⣀⠑⠯⡂⠄⣀⣣⢀⣈⢺⡜⢣⠀⡆⡇⠀⢣⠀⠀⠀⠀
+⠀⠀⠀⠇⠀⢸⠀⡗⣰⡿⡻⠿⡳⡅⠀⠀⠀⠀⠈⡵⠿⠿⡻⣷⡡⡇⡇⠀⢸⣇⠀⠀⠀
+⠀⠀⢰⠀⠀⡆⡄⣧⡏⠸🔵⢸⠁⠀⠀⠀⠀⠐⢙🟢⠂⢡⠘⣇⡇⠃⠀⠀⢹⡄⠀⠀
+⠀⠀⠟⠀⠀⢰⢁⡇⠇⠰⢁⡜⠀⠀⠀⠀⠀⠀⠘⣀⣁⠌⠀⠃⠰⠀⠀⠀⠈⠰⠀⠀
+⠀⡘⠀⠀⠀⠀⢊⣤⠀⠀⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⠄⠀⢸⠃⠀⠀⠀⠀⠀⠃⠀
+⢠⠁⢀⠀⠀⠀⠈⢿⡀⠀⠀⠀<span style="font-size:xx-large;line-height: 0%;">🚬</span>⢀⡀⠀⠀⠀⠀⠀⠀⢀⠏⠀⠀⠀⠀⠀⠀⠸⠀
+⠘⠸⠘⡀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠁⠀⠃⠀⠀⠀⠀⢀⠎⠀⠀⠀⠀⠀⢠⠀⠀⡇
+⠀⠇⢆⢃⠀⠀⠀⠀⠀⡏⢲⢤⢀⡀⠀⠀⠀⠀⠀⢀⣠⠄⡚⠀⠀⠀⠀⠀⠀⣾⠀⠀⠀
+⢰⠈⢌⢎⢆⠀⠀⠀⠀⠁⣌⠆⡰⡁⠉⠉⠀⠉⠁⡱⡘⡼⠇⠀⠀⠀⠀⢀⢬⠃⢠⠀⡆
+⠀⢢⠀⠑⢵⣧⡀⠀⠀⡿⠳⠂⠉⠀⠀⠀⠀⠀⠀⠀⠁⢺⡀⠀⠀⢀⢠⣮⠃⢀⠆⡰⠀
+⠀⠀⠑⠄⣀⠙⡭⠢⢀⡀⠀⠁⠄⣀⣀⠀⢀⣀⣀⣀⡠⠂⢃⡀⠔⠱⡞⢁⠄⣁⠔⠁⠀
+⠀⠀⠀⠀⠀⢠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠉⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀thread <%= threadId %>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀
+</pre>
+
+  <script>
+    // Example matrix
+    const matrix = [
+      [0, 0, 'b', 0, 'a'],
+      [0, '4', 0, 'g', 0],
+      [0, 0, 0, 0, 0],
+      ['d', 0, 'z', 0, 0],
+      ['d', 0, 'z', 0, 0],
+      ['d', 0, 'z', 0, 0],
+      ['d', 0, 'z', 0, 0]
+    ];
+
+    const matrixContainer = document.querySelector('.matrix');
+
+    function renderMatrix(matrix) {
+      matrixContainer.style.gridTemplateColumns = `repeat(${matrix[0].length}, auto)`; // Adjust grid columns dynamically
+      
+      matrix.forEach(row => {
+        row.forEach(cell => {
+          const cellElement = document.createElement('div');
+          cellElement.classList.add('cell');
+          if (cell === 0) {
+            cellElement.classList.add('empty'); // Style empty cells differently
+            cellElement.textContent = '.';
+          } else {
+            cellElement.textContent = cell;
+          }
+          matrixContainer.appendChild(cellElement);
+        });
+      });
+    }
+
+    renderMatrix(matrix);
+  </script>
+</body>
+</html>

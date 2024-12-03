@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="gr">
+<head>
+    <title>Sleepy Captcha example</title>
+    <style>
+.glow {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px pink,
+    0 0 82px pink,
+    0 0 92px pink,
+    0 0 102px pink,
+    0 0 151px pink;
+} 
+
+        body {
+            margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+        }
+
+        #content {
+            background: rgba(1,1,10,0.8);
+            padding: 20px;
+            margin-top: 40px;
+            color: white
+        }
+
+        .video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the video stays behind the content */
+}
+
+#bg-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+        #main {
+            width: 400px;
+        }
+        #modal {
+            display:none;
+        }
+        input[type="checkbox"]:checked ~ .modal,
+        input[type="checkbox"]:checked ~ .modal-background {
+            display: block;
+        }
+        .modal-background {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 9998;
+        }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;	
+    width: 410px;
+    height: 195px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.modal > p {
+	padding: 15px;
+    margin: 0;
+}
+.modal-header {
+	background-color: #f9f9f9;
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    height: 50px;
+}
+.modal-header h3 {
+	margin: 0;
+    box-sizing: border-box;
+    padding-left: 15px;
+    line-height: 50px;
+    color: #4d4d4d;
+    font-size: 16px;
+    display: inline-block;
+}
+.modal-header label {
+	box-sizing: border-box;
+    border-left: 1px solid #dddddd;
+    float: right;
+    line-height: 50px;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+}
+.modal-header label:hover img {
+	opacity: 0.6;
+}
+/* below is optional, it is just an example for the blue button */
+.example-label {
+	box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    background-color: #375d91;
+    color: #f9f9f9;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.example-label:hover {
+	background-color: #3c669f;
+}
+
+        /* Hide the checkbox itself */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Positioning the images on top of each other */
+        .image-container {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .image-container-0 {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .image-container-0 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image-container-1 {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .image-container-1 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image-container-2 {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .image-container-2 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image-container-3 {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .image-container-3 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .second-container img {
+            position: absolute;
+            top: 0;
+            left: 200;
+        }
+
+        input[type=button], input[type=submit], input[type=reset] {
+  background-color: darkcyan;
+  border: none;
+  color: white;
+  padding: 9px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+        .second-container {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .second-container img {
+            position: absolute;
+            top: 0;
+            left: 200;
+        }
+
+        .third-container {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .third-container img {
+            position: absolute;
+            top: 0;
+            left: 400;
+        }
+
+        .fourth-container {
+            position: relative;
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+        }
+
+        .fourth-container img {
+            position: absolute;
+            top: 0px;
+            left: 0;
+        }
+
+        /* Both images should fill the container */
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* When the first checkbox is checked, hide the first image */
+        input:checked + img {
+            display: none;
+        }
+
+        img {
+            cursor: alias;
+        }
+
+        #modal-body {
+            display: flex;
+        }
+
+        #done:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="display: flex; align-items: center; justify-content: center;">
+    <audio id="background-audio" loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      
+      <script>
+        console.log('hi, this site is just to test my new captcha. the content is just supposed to look creepy and ridiculous to prank my friends. i have my email address somewhere on here if you wind up here on accident and want to say hi')
+        if (window.location.href.includes("captcha=failed")) {
+            alert("You failed the Captcha :/");
+        }
+
+      </script>
+          <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+          <source src="bg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div id="content">
+
+        <pre class="glow">
+"You, God, are my god. 
+Feverishly I seek you;
+My whole being thirsts 
+for you here in a dry,
+and parched land, with
+out any water to drink
+
+Because your love is better than life.
+    </pre>
+
+<p>Тайный обмен апологетикой.<br>
+    Хочешь увидеть чудо?<br></p>
+
+<form method="post" id="enter-form" action="/submit">
+    
+    <input type="checkbox" id="modal">
+<label for="modal" class="example-label">Captcha</label>
+<label for="modal" class="modal-background"></label>
+<div class="modal">
+	<div class="modal-header">
+		<h3>Cascade Captcha</h3>
+        <label for="modal">
+        	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAdVBMVEUAAABNTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0N3NIOAAAAJnRSTlMAAQIDBAUGBwgRFRYZGiEjQ3l7hYaqtLm8vsDFx87a4uvv8fP1+bbY9ZEAAAB8SURBVBhXXY5LFoJAAMOCIP4VBRXEv5j7H9HFDOizu2TRFljedgCQHeocWHVaAWStXnKyl2oVWI+kd1XLvFV1D7Ng3qrWKYMZ+MdEhk3gbhw59KvlH0eTnf2mgiRwvQ7NW6aqNmncukKhnvo/zzlQ2PR/HgsAJkncH6XwAcr0FUY5BVeFAAAAAElFTkSuQmCC" width="16" height="16" alt="">
+        </label>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <span style="font-size: small; font-style: italic;color:black">click until the images are upright</span>
+    </div>
+        <div id="modal-body">
+            <% images.forEach((imageSet, setIndex) => { %>
+                <div class="image-container-<%= setIndex %>">
+                    <% imageSet.forEach((image, imageIndex) => { %>
+                        <label for="sleepy-img-<%= setIndex %>-<%= imageIndex %>">
+                            <input id="sleepy-img-<%= setIndex %>-<%= imageIndex %>" name="sleepy-img-<%= setIndex %>-<%= imageIndex %>" type="checkbox" />
+                            <img src="<%= image %>" alt="bible original image" />
+                        </label>
+                    <% }); %>
+                </div>
+            <% }); %>
+        </div>
+        <label onclick="document.getElementById('enter-form').submit();" id="done" style="display: flex; justify-content: center; font-size: large;color:black" for="modal">
+            <u>Done</u>
+        </label>
+</div>
+<input hidden type="submit" value="Enter" />
+</form>
+</div>
+</body>
+</html>

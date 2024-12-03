@@ -1,0 +1,139 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>看自己黄色server 002</title>
+<style>
+  body {
+    background-color: #fcf7fc;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='15px' width='15px'><text x='0' y='15' fill='grey' font-size='7'>•</text></svg>");
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2px;
+    line-height: 25px;
+    height: 100%;
+  }
+
+/* styles for laptops and tablets */
+@media only screen and (min-width: 800px) {
+  #frontpage-box {
+    display: inline-block;
+    background-color: white;
+    width: 650px;
+    padding: 25px;
+    border-color: black;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-width: 1px;
+    border-style: solid;
+    height: 80%;
+    /* based and kirtaner pilled */
+    min-height: 650px;
+    max-height: 720px;
+    box-shadow: 12px 12px;
+    border-radius: 5%;
+    font-size: 14px;
+  }
+  footer {
+    position: absolute;
+    bottom: 20px;
+    padding: 0px;
+    background-color: #fcf7fc;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* styles for laptops and tablets */
+@media only screen and (max-height: 800px) {
+  footer {
+    display: none;
+  }
+}
+
+/* styles for laptops and tablets */
+@media only screen and (max-width: 799px) {
+  #frontpage-box {
+    background-color: white;
+  }
+}
+
+#welcome-title {
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* Used in the footer */
+.heart-emoticon {
+  color: red;
+  font-weight: bolder;
+  font-size: normal;
+}
+
+#board-list>li::marker {
+  content: "";
+  background: lightgray;
+  border-radius: 1ch;
+  padding-inline: 1ch;
+  margin-inline-end: 1ch;
+}
+
+.board-link {
+  color: #f2aeba;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+#load-more {
+  font-style: italic;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: lightgray;
+  margin-top: 4px;
+}
+
+#load-more:hover {
+  font-weight: bolder;
+}
+</style>
+
+<body>
+  <main id="frontpage-box">
+    <h1 id="welcome-title">Site map</h1>
+    <p style="color: red;">Warning: you are browsing Данит via clearnet. Connect to the Tor hidden service for full functionality.</p>
+    <p id="welcome-message">
+      Данит is an anonymous forum inspired by the Japanese website 2channel where 
+      evangelists of the restored gospel gather clandestinely for faith promoting
+      discussion based in scripture and prophetic teaching.
+    </p>    
+    <ul id="board-list">
+      <u>Public boards</u>
+      <li><a class='board-link' href="b/">/xd/</a> - random (shared server with Cavalrychan's /b/)</li>
+      <li><a class='board-link' href="javascript:alert('/xd/ is the only available board for unauthorized visitors. Redirecting you there instead ;)');window.location.href='/b/'">/💌/</a> - mail system anomolies</li>
+      <li><a class='board-link' href="javascript:alert('/xd/ is the only available board for unauthorized visitors. Redirecting you there instead ;)');window.location.href='/b/'">/👾/</a> - currency manufacturing</li>
+      <li><a class='board-link' href="javascript:alert('/xd/ is the only available board for unauthorized visitors. Redirecting you there instead ;)');window.location.href='/b/'">/💡/</a> - angel messages</li>
+      <li><a class='board-link' href="javascript:alert('/xd/ is the only available board for unauthorized visitors. Redirecting you there instead ;)');window.location.href='/b/'">/🧳/</a> - border crossings</li>
+      <a href="#" onclick="alert('Urbit eauth failed (sorry!)')" id="load-more">(view more...)</a> <!-- takes you to a list of all boards, sorted by popularity -->
+    </ul>
+
+    <hr />
+
+    <ul>
+      <u>FAQ:</u>
+      <li>12 XMR sent from Mr Kittrell to Elder <span style="letter-spacing: -1px;">███&nbsp;&nbsp;&nbsp;███████</span> (defendant)</li>
+      <li>SFTP hosted on-prem (from Tiraspol server or ngrok on Luhansk home laptop)</li>
+      <li>To attend in Kigali in January, <a class="board-link" href="mailto:VeraZasulich_002@proton.me">say hi</a></li>
+      <li>Network status:</li>
+    </ul>
+    <pre style="line-height:15px; font-size: small;">
+                +- 🖥️ Тираспол <font color="red">(down)</font> --+
+               /                         \
+         IPFS 💾                         🗄️ access point -- 👩🏻‍💻 (you)
+               \                         /
+                +- 💻 Luhansk (mirror) -+</pre>
+  </main>
+  <footer>あいしてる</footer>
+</body>
